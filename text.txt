@@ -1,0 +1,123 @@
+VB.NET 
+=========
+
+Certainly! Let's create two VB.NET assemblies, "StudentLibrary" and "TeachersLibrary," and a VB.NET console application "CommonApp" that uses data from both assemblies. We'll be using Visual Studio Code for this example.
+
+Step 1: Create the "StudentLibrary" Assembly in VB.NET
+
+Create a Folder for Your Project:
+
+Create a new folder for your project. You can do this using the command line or a file explorer.
+
+Open Visual Studio Code:
+
+Navigate to your project folder and open it in Visual Studio Code.
+
+Create the "StudentLibrary" Project:
+
+In the terminal within Visual Studio Code, run the following command to create the "StudentLibrary" project in VB.NET:
+
+bash
+
+dotnet new classlib -n StudentLibrary -lang VB
+
+
+Define the Student Class:
+
+Inside the "StudentLibrary" folder, you'll find a file named "Class1.vb." Rename it to "Student.vb" and define the Student class as follows:
+
+vb
+Copy code
+Public Class Student
+    Public Property Name As String
+    Public Property Age As Integer
+End Class
+Build the "StudentLibrary" Assembly:
+
+In the terminal, navigate to the "StudentLibrary" folder and build the project:
+
+bash
+Copy code
+cd StudentLibrary
+dotnet build
+Step 2: Create the "TeachersLibrary" Assembly in VB.NET
+
+Create the "TeachersLibrary" Project:
+
+In the terminal within Visual Studio Code, run the following command to create the "TeachersLibrary" project in VB.NET:
+
+bash
+
+dotnet new classlib -n TeachersLibrary -lang VB
+
+
+Define the Teacher Class:
+
+Inside the "TeachersLibrary" folder, you'll find a file named "Class1.vb." Rename it to "Teacher.vb" and define the Teacher class as follows:
+
+vb
+Copy code
+Public Class Teacher
+    Public Property Name As String
+    Public Property Subject As String
+End Class
+Build the "TeachersLibrary" Assembly:
+
+In the terminal, navigate to the "TeachersLibrary" folder and build the project:
+
+bash
+Copy code
+cd TeachersLibrary
+dotnet build
+Step 3: Create the "CommonApp" in VB.NET
+
+Create the "CommonApp" Project:
+
+In the terminal within Visual Studio Code, navigate to the root project folder and run the following command to create the "CommonApp" project in VB.NET:
+
+bash
+
+
+dotnet new console -n CommonApp -lang VB
+
+
+Reference the "StudentLibrary" and "TeachersLibrary" Assemblies:
+
+In the terminal, navigate to the "CommonApp" folder and add references to both assemblies:
+
+bash
+Copy code
+cd CommonApp
+dotnet add reference ..\StudentLibrary\StudentLibrary.vbproj
+dotnet add reference ..\TeachersLibrary\TeachersLibrary.vbproj
+These commands reference the project files (.vbproj) instead of DLLs.
+
+Use Classes from Both Assemblies:
+
+In the "CommonApp" project, open the Program.vb file and use classes from both assemblies as follows:
+
+vb
+Copy code
+Imports StudentLibrary
+Imports TeachersLibrary
+Module Program
+    Sub Main()
+        ' Use the Student class from StudentLibrary
+        Dim student As New Student With {.Name = "John Doe", .Age = 20}
+
+        ' Use the Teacher class from TeachersLibrary
+        Dim teacher As New Teacher With {.Name = "Mrs. Smith", .Subject = "Math"}
+
+        Console.WriteLine($"Student: {student.Name}, Age: {student.Age}")
+        Console.WriteLine($"Teacher: {teacher.Name}, Subject: {teacher.Subject}")
+    End Sub
+End Module
+Build and Run the "CommonApp" Project:
+
+In the terminal, within the "CommonApp" folder, build and run the project:
+
+bash
+Copy code
+dotnet build
+dotnet run
+This should create two VB.NET assemblies ("StudentLibrary" and "TeachersLibrary") and a VB.NET console application ("CommonApp") that uses data from both assemblies in Visual Studio Code.

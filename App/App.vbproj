@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\StudentLibrary\StudentLibrary.vbproj" />
+    <ProjectReference Include="..\TeachersLibrary\TeachersLibrary.vbproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>App</RootNamespace>
+    <TargetFramework>net7.0</TargetFramework>
+  </PropertyGroup>
+
+</Project>
